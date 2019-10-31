@@ -225,7 +225,7 @@ node_templates:
     properties:
       openstack_config: *openstack_config
       floatingip:
-        floating_network_id: { { get_capability: [ get_attribute : [openstack, deployment, id], external_network ] }
+        floating_network_id: { get_capability: [ get_attribute : [openstack, deployment, id], external_network ] }
     relationships:
     - type: cloudify.relationships.contained_in
       target: openstack
@@ -235,7 +235,7 @@ node_templates:
     properties:
       openstack_config: *openstack_config
       use_external_resource: true
-      resource_id: { { get_capability: [ get_attribute : [openstack, deployment, id], private_subnet ] }
+      resource_id: { get_capability: [ get_attribute : [openstack, deployment, id], private_subnet ] }
     relationships:
     - type: cloudify.relationships.contained_in
       target: private_network
@@ -245,7 +245,7 @@ node_templates:
     properties:
       openstack_config: *openstack_config
       use_external_resource: true
-      resource_id: { { get_capability: [ get_attribute : [openstack, deployment, id], private_network ] }
+      resource_id: { get_capability: [ get_attribute : [openstack, deployment, id], private_network ] }
     relationships:
     - type: cloudify.relationships.contained_in
       target: scaling_group
@@ -261,7 +261,7 @@ node_templates:
     properties:
       openstack_config: *openstack_config
       use_external_resource: true
-      resource_id: { { get_capability: [ get_attribute : [openstack, deployment, id], public_subnet ] }
+      resource_id: { get_capability: [ get_attribute : [openstack, deployment, id], public_subnet ] }
     relationships:
     - type: cloudify.relationships.contained_in
       target: public_network
@@ -271,7 +271,7 @@ node_templates:
     properties:
       openstack_config: *openstack_config
       use_external_resource: true
-      resource_id: { { get_capability: [ get_attribute : [openstack, deployment, id], public_network ] }
+      resource_id: { get_capability: [ get_attribute : [openstack, deployment, id], public_network ] }
     relationships:
     - type: cloudify.relationships.contained_in
       target: openstack
